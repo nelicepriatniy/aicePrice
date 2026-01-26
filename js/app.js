@@ -1,13 +1,26 @@
+function openModal(modal) {
+  modal.classList.add('active')
+  offset.classList.add('active')
+  document.querySelector('body').classList.add('no-scroll')
+  document.querySelector('html').classList.add('no-scroll')
+}
+
+function closeModal(modal) {
+  modal.classList.remove('active')
+  offset.classList.remove('active')
+  document.querySelector('body').classList.remove('no-scroll')
+  document.querySelector('html').classList.remove('no-scroll')
+
+
+}
 
 const offset = document.querySelector('.offset')
 
 offset.onclick = () => {
-  cart.classList.remove('active')
-  register.classList.remove('active')
-  login.classList.remove('active')
-  card.classList.remove('active')
-
-  offset.classList.remove('active')
+  closeModal(cart)
+  closeModal(register)
+  closeModal(login)
+  closeModal(card)
 }
 
 //корзина
@@ -19,15 +32,13 @@ const cartCloseBtns = document.querySelectorAll('.cart-close')
 cartCloseBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    cart.classList.remove('active')
-    offset.classList.remove('active')
+    closeModal(cart)
   })
 })
 cartOpenBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    cart.classList.add('active')
-    offset.classList.add('active')
+    openModal(cart)
   })
 })
 
@@ -40,15 +51,13 @@ const registerCloseBtns = document.querySelectorAll('.register-close')
 registerCloseBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    register.classList.remove('active')
-    offset.classList.remove('active')
+    closeModal(register)
   })
 })
 registerOpenBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    register.classList.add('active')
-    offset.classList.add('active')
+    openModal(register)
   })
 })
 
@@ -62,15 +71,13 @@ const loginCloseBtns = document.querySelectorAll('.login-close')
 loginCloseBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    login.classList.remove('active')
-    offset.classList.remove('active')
+    closeModal(login)
   })
 })
 loginOpenBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    login.classList.add('active')
-    offset.classList.add('active')
+    openModal(login)
   })
 })
 
@@ -83,15 +90,13 @@ const cardCloseBtns = document.querySelectorAll('.card-close')
 cardCloseBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    card.classList.remove('active')
-    offset.classList.remove('active')
+    closeModal(card)
   })
 })
 cardOpenBtns.forEach((el) => {
   el.addEventListener('click', function (e) {
     e.preventDefault()
-    card.classList.add('active')
-    offset.classList.add('active')
+    openModal(card)
   })
 })
 
